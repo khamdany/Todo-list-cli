@@ -1,0 +1,1 @@
+/home/thinkpad/Personal/program/rust/my_project/todo-cli/target/release/todo-cli: /home/thinkpad/Personal/program/rust/my_project/todo-cli/src/logic.rs /home/thinkpad/Personal/program/rust/my_project/todo-cli/src/main.rs
