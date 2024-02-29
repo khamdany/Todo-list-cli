@@ -60,7 +60,7 @@ fn remove(s: SaveFile) {
     loop {
         let mut line: Vec<&str> = s.content.lines().collect();
         if line.is_empty() {
-            println!("There nothing todo");
+            println!("There nothing to delete");
             break;
         }
         eprint!("what line you want to delete? ");
@@ -75,6 +75,13 @@ fn remove(s: SaveFile) {
         }
         if number.clone().unwrap() > line.len() {
             println!("Not valid");
+            let mut count = 0;
+            print!("Valid line is : ");
+            while count != line.len() {
+                count += 1;
+                print!("{} ", count)
+            }
+            println!("");
             continue;
         }
         line.remove(number.unwrap() - 1);
