@@ -66,23 +66,18 @@ fn remove(s: SaveFile) {
         eprint!("what line you want to delete? ");
         let number = input();
         let number: Result<usize, _> = number.trim().parse();
-        let mut real_number: usize = 0;
         match number {
-            Ok(parsed) => real_number = parsed,
+            Ok(_) => (),
             Err(_) => {
                 println!("Enter number ");
                 continue;
             }
         }
-        if number.unwrap().clone() > line.len() {
+        if number.clone().unwrap() > line.len() {
             println!("Not valid");
             continue;
         }
-        if real_number > line.len() {
-            println!("Print not valid");
-            continue;
-        }
-        line.remove(real_number - 1);
+        line.remove(number.unwrap() - 1);
         let new = line.join("\n");
         let _ = fs::write(s.path, new);
         break;

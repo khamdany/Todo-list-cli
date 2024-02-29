@@ -20,6 +20,7 @@ fn main() {
         println!("2. remove todo list");
         println!("3. clean todo list");
         println!("4. to exit");
+        println!();
         eprint!("input: ");
 
         loop {
